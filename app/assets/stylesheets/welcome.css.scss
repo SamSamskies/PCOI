@@ -1,3 +1,109 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* reset */
+
+html, body, address, blockquote, del, div, h1, h2, h3, h4, h5, h6, hr, ins, noscript, p, pre, dl, dt, dd, li, ol, ul, table, caption, colgroup, col, thead, tfoot, tbody, tr, td, th, form, button, fieldset, figure, legend, label, select, optgroup, option, textarea, a, bdo, br, img, map, area, object, param, q, script, span, sub, sup, abbr, acronym, cite, code, del, dfn, em, ins, kbd, samp, strong, var, b, big, i, small, tt{border:0;font-family:inherit;font-size:100%;font-style:inherit;font-weight:inherit;margin:0;outline:0;padding:0;vertical-align:baseline;}
+ol, ul{list-style:none;}
+th{text-align:left;}
+table{border-collapse:collapse;}
+
+/* global */
+
+body 												{background:#eee; color:#555; font-family:'Bitter',georgia,serif; line-height:1.5;}
+a:link,
+a:visited										    {color:#3db2ae; text-decoration:none;
+													-moz-transition:color .1s ease-in;
+													-webkit-transition:color .1s ease-in;
+													-o-transition:color .1s ease-in;
+													transition:color .1s ease-in;
+}
+a:hover,
+a:visited:hover									    {color:#0796ca; text-decoration:none;}
+
+table td										    {}
+
+h1												    {font-size:2.5em; font-weight:700; margin:0 0 .25em 0; text-align:center;}
+h2												    {font-size:1.5em; font-weight:700; line-height:1.25; margin:0 0 .5em 0;}
+h3												    {font-weight:700; margin:0 0 .75em 0; text-transform:uppercase;}
+h4												    {}
+h5												    {}
+h6												    {}
+
+p												    {margin:0 0 1.5em 0;}
+span												{}
+hr													{}
+label												{}
+input[type=text]									{}
+input[type=text]:focus								{}
+input[type=submit]									{}
+textarea											{}
+
+::selection 										{}
+::-moz-selection 									{}
+
+
+
+/* --------------------------------------- GENERAL STYLES --------------------------------------- */
+
+body {
+    background:#eee;
+    color:#222;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    size:14px;
+}
+
+
+header {
+    background:#222;
+    color:#fff;
+    padding:10px;
+    position:relative;
+}
+
+a {
+    color:#1FA1FA;
+}
+
+
+label {
+	display:inline-block;
+	width:100px;
+}
+
+/*------------------------------------- LAYOUT -------------------------------------------------*/
+#wrapper {
+    width:1000px;
+    margin:0 auto;
+    background:#fff;
+    overflow:auto;
+}
+
+#main {
+	padding:20px;
+}
+
+#bookmarks {
+	padding:10px;
+	width:800px;
+	min-height:250px;
+	list-style-type:none;
+}
+
+#bookmarks li {
+	margin-bottom:10px;
+}
+
+
+#bookmarks .tags {
+	display:inline-block;
+	max-width:90px;
+	margin-left:10px;
+	text-align:right;
+	vertical-align: top;
+}
+
+
+//#392E85
+//#A30008
