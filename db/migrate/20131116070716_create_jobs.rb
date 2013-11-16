@@ -13,7 +13,6 @@ class CreateJobs < ActiveRecord::Migration
       t.string :year
       t.integer :country_id
       t.integer :sector_id
-
       t.timestamps
     end
   end
