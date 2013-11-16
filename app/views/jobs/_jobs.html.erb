@@ -1,7 +1,7 @@
 <% filtered_jobs.each do |job| %>
   <tr>
     <td><%= "#{job.title}" %></td>
-    <td><%= "#{job.sector}" %></td>
+    <td><%= "#{job.sector.name}" %></td>
     <td><%= "#{job.departure_date}" %></td>
     <td><%= "#{job.skills}" %></td>
     <td><%= "#{job.country_id}" %></td>
