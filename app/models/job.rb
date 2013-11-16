@@ -1,3 +1,3 @@
 class Job < ActiveRecord::Base
-  belongs_to :sector
+  belongs_to :country
 end

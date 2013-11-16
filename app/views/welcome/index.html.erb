@@ -2,22 +2,45 @@
     <header>
     	<div id="brand"></div>
     </header>
+    <div id="filterdiv">
+         <form id="interests" name="setInterests" class="inline" method="post">
+         	<p class="inline">I'm interested in</p>
+         	<div class="check-selections inline" id="sectors">
+         		<ul>
+		            <% @sectors.each do |sector| %>
+		            	<li><input type="checkbox" value='<%= sector.id %>'><label><%= sector.name.titleize %></label></li>
+		            <% end %>
+		            <li><input type="checkbox" value='Education'><label>Education</label></li>
+		            <li><input type="checkbox" value='Agriculture'><label>Agriculture</label></li>
+		            <li><input type="checkbox" value='Health'><label>Health</label></li>
+		            <li><input type="checkbox" value='Environment'><label>Environment</label></li>
+		            <li><input type="checkbox" value='Youth'><label>Youth</label></li>
+		            <span class="selectAll small">All</span>
+		        </ul>
+	        </div>
 
-    <div id="main">
-         <h2>I'm interested in 
-         	<select>  
-         		<option value="value1">Value 1</option> 
-				<option value="value2" selected>Value 2</option>
-				<option value="value3">Value 3</option>
-			</select>
-			in 
-         	<select>  
-         		<option value="value1">Value 4</option> 
-				<option value="value2" selected>Value 5</option>
-				<option value="value3">Value 6</option>
-			</select>
-         </h2>
+
+			<p class="inline">in</p>
+			<div class="check-selections inline" id="regions">
+				<ul>
+		            <% @regions.each do |region| %>
+		            	<li><input type="checkbox" value='<%= region.id %>'><label><%= region.name.titleize %></label></li>
+		            <% end %>
+		            <li><input type="checkbox" value='Central America'><label>Central America</label></li>
+		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
+		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
+		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
+		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
+		            <span class="selectAll small">All</span>
+		        </ul>
+	        </div>
+         	<input type="submit" class="submit" value="Go">
+         </form>
     </div>
     <div id="map-canvas"></div>
+    <div id="SearchResults">
+
+
+    </div>
 </div>
 

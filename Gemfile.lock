@@ -58,6 +58,8 @@ GEM
     diff-lcs (1.2.4)
     erubis (2.7.0)
     execjs (2.0.2)
+    faker (1.2.0)
+      i18n (~> 0.5)
     hike (1.2.3)
     i18n (0.6.5)
     jbuilder (1.5.2)
@@ -79,6 +81,8 @@ GEM
       mini_portile (~> 0.5.0)
     pg (0.17.0)
     polyglot (0.3.3)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -165,10 +169,15 @@ DEPENDENCIES
   binding_of_caller
   capybara
   debugger
+<<<<<<< HEAD
   execjs
+=======
+  faker
+>>>>>>> master
   jbuilder (~> 1.2)
   jquery-rails
   pg
+  quiet_assets
   rails (= 4.0.0)
   rails_12factor
   rspec-rails (~> 2.12)

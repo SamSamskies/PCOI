@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116070739) do
+ActiveRecord::Schema.define(version: 20131116094222) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
@@ -20,10 +20,16 @@ ActiveRecord::Schema.define(version: 20131116070739) do
     t.datetime "updated_at"
   end
 
+  create_table "countries_sectors", force: true do |t|
+    t.integer "country_id"
+    t.integer "sector_id"
+  end
+
   create_table "jobs", force: true do |t|
     t.string   "application_deadline"
     t.string   "departure_date"
     t.string   "description"
+<<<<<<< HEAD
     t.string   "notification_date"
     t.integer  "open_positions"
     t.text     "physical_requirements"
@@ -31,6 +37,9 @@ ActiveRecord::Schema.define(version: 20131116070739) do
     t.text     "skills"
     t.string   "year"
     t.integer  "sector_id"
+=======
+    t.integer  "country_id"
+>>>>>>> master
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -43,7 +52,6 @@ ActiveRecord::Schema.define(version: 20131116070739) do
 
   create_table "sectors", force: true do |t|
     t.string   "name"
-    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

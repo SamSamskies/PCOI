@@ -1,3 +1,6 @@
+require 'csv'
+require 'spreadsheet'
+
 regions = ["the caribbean", "central america & mexico", "south america", "eastern europe & central asia", "asia", "north america & the middle east", "africa", "the pacific islands" ]
 
 sectors = ["education", "health", "community economic development", "environment", "youth in development", "agriculture", "other"]
@@ -6,11 +9,21 @@ regions.each do |region|
   Region.create name: region
 end
 
+region_ids = Region.pluck :id
+
 sectors.each do |sector|
-  Sector.create name: sector
+  sector = Sector.create name: sector
 end
 
-require 'spreadsheet'
+sector_ids = Sector.pluck :id
+
+CSV.foreach("./db/countries.csv") do |row|
+  country = Country.create name: row.first.strip, region_id: region_ids.sample
+
+  4.times do
+    country.sectors << Sector.find(sector_ids.sample)
+  end
+end
 
 Spreadsheet.client_encoding = 'UTF-8'
 
@@ -61,3 +74,10 @@ sheet1.each do |line|
 		)
 	job.sector_id = sector_id
 end
+=======
+country_ids = Country.pluck :id
+
+400.times do
+  Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
+end
+>>>>>>> master
