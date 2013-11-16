@@ -26,9 +26,17 @@ ActiveRecord::Schema.define(version: 20131116094222) do
   end
 
   create_table "jobs", force: true do |t|
-    t.string   "title"
+    t.string   "application_deadline"
+    t.string   "departure_date"
     t.string   "description"
+    t.string   "notification_date"
+    t.integer  "open_positions"
+    t.text     "physical_requirements"
+    t.integer  "quarter"
+    t.text     "skills"
+    t.string   "year"
     t.integer  "country_id"
+    t.integer  "sector_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
