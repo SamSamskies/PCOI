@@ -35,10 +35,11 @@ book = Spreadsheet.open file
 sheet1 = book.worksheet 0
 
 sheet1.each_with_index do |line, i|
+	break if line == []
+
 	print i += 1
 	sector = line[4]
 
-	next if line == []
 	next if line[0] == 'Pending' || line[0] == "0" || line[0] == "CURRENT REQ STATUS"
 	next if line[16].nil? || line[16] == 'SEE ABOVE'
 	next if sector == 'Married Couples Req'
