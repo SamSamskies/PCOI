@@ -6,6 +6,7 @@ PCOI::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'welcome#index'
   resources :jobs, only: [:index]
+  resources :sectors, only: [:show]
 
   # Example resource route with options:
   #   resources :products do

@@ -25,6 +25,7 @@ CSV.foreach("./db/countries.csv") do |row|
   end
 end
 
+print "Creating jobs"
 Spreadsheet.client_encoding = 'UTF-8'
 
 file = File.join(Rails.root, 'db', 'jobs.xls')
@@ -74,10 +75,9 @@ sheet1.each do |line|
 		)
 	job.sector_id = sector_id
 end
-=======
-country_ids = Country.pluck :id
 
-400.times do
-  Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
-end
->>>>>>> master
+# country_ids = Country.pluck :id
+
+# 400.times do
+#   Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
+# end
