@@ -11,18 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131116094222) do
+ActiveRecord::Schema.define(version: 20131116070739) do
 
   create_table "countries", force: true do |t|
     t.string   "name"
     t.integer  "region_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "countries_sectors", force: true do |t|
-    t.integer "country_id"
-    t.integer "sector_id"
   end
 
   create_table "jobs", force: true do |t|

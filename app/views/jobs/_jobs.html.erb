@@ -1,5 +1,5 @@
 <ul>
-  <% jobs.each do |job| %>
+  <% filtered_jobs.each do |job| %>
     <li><%= "#{job.description}, #{job.country.name}" %></li>
   <% end %>
 </ul>
