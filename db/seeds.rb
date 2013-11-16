@@ -24,7 +24,7 @@ CSV.foreach("./db/countries.csv") do |row|
     country.sectors << Sector.find(sector_ids.sample)
   end
 end
-
+country_ids = Country.pluck :id
 print "Creating jobs"
 Spreadsheet.client_encoding = 'UTF-8'
 
@@ -71,12 +71,11 @@ sheet1.each do |line|
 		:physical_requirements => line[14],
 		:quarter => quarter,
 		:skills => line[15],
-		:year => year
+		:year => year,
+		:country_id => country_ids.sample
 		)
 	job.sector_id = sector_id
 end
-
-# country_ids = Country.pluck :id
 
 # 400.times do
 #   Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
