@@ -9,8 +9,10 @@ class CreateJobs < ActiveRecord::Migration
       t.text :physical_requirements
       t.integer :quarter
       t.text :skills
+      t.text :title
       t.string :year
-      t.integer :country_id
+
+      t.belongs_to :country
       t.belongs_to :sector
       t.timestamps
     end

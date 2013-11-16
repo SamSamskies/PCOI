@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 20131116094222) do
     t.text     "physical_requirements"
     t.integer  "quarter"
     t.text     "skills"
+    t.text     "title"
     t.string   "year"
     t.integer  "country_id"
     t.integer  "sector_id"

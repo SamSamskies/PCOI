@@ -5,18 +5,23 @@ regions = ["the caribbean", "central america & mexico", "south america", "easter
 
 sectors = ["education", "health", "community economic development", "environment", "youth in development", "agriculture", "other"]
 
+
+print "Creating Regions"
 regions.each do |region|
   Region.create name: region
 end
 
 region_ids = Region.pluck :id
 
+
+print "Creating Sectors"
 sectors.each do |sector|
   sector = Sector.create name: sector
 end
 
 sector_ids = Sector.pluck :id
 
+print "Creating Countries"
 CSV.foreach("./db/countries.csv") do |row|
   country = Country.create name: row.first.strip, region_id: region_ids.sample
 
@@ -24,14 +29,15 @@ CSV.foreach("./db/countries.csv") do |row|
     country.sectors << Sector.find(sector_ids.sample)
   end
 end
-country_ids = Country.pluck :id
-print "Creating jobs"
+
+
+print "Creating Jobs"
 Spreadsheet.client_encoding = 'UTF-8'
 
 file = File.join(Rails.root, 'db', 'jobs.xls')
 book = Spreadsheet.open file
 sheet1 = book.worksheet 0
-
+i = 0
 sheet1.each do |line|
 
 	next if line == []
@@ -45,21 +51,24 @@ sheet1.each do |line|
 	year = line[1][2..-1]
 	quarter = line[2].split(' ')[-1].to_i
 	open_positions = line[7].to_i
+	title = line[8].split(' ')[1..-1].join(' ')
 	sector_id = ""
+	country_id = Country.find_by_name(line[5]).id unless Country.find_by_name(line[5]).nil?
+
 	if line[4] == 'Environment'
-		sector_id == 4
-	elsif line[4] == 'Agriculture'
-		sector_id == 6
-	elsif line[4] == 'Health'
-		sector_id == 2
-	elsif line[4] == 'Business'
-		sector_id == 3
-	elsif line[4] == 'Youth'
-		sector_id == 5
-	elsif line[4] == 'Education'
-		sector_id == 1
+		sector_id = 4
+	elsif line[4] = 'Agriculture'
+		sector_id = 6
+	elsif line[4] = 'Health'
+		sector_id = 2
+	elsif line[4] = 'Business'
+		sector_id = 3
+	elsif line[4] = 'Youth'
+		sector_id = 5
+	elsif line[4] = 'Education'
+		sector_id = 1
 	else
-		sector_id == 7
+		sector_id = 7
 	end
 
 	job = Job.create(
@@ -72,9 +81,11 @@ sheet1.each do |line|
 		:quarter => quarter,
 		:skills => line[15],
 		:year => year,
-		:country_id => country_ids.sample
+		:country_id => country_id,
+		:title => title
 		)
 	job.sector_id = sector_id
+	print i += 1
 end
 
 # 400.times do
