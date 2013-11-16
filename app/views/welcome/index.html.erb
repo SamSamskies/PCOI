@@ -4,17 +4,19 @@
     </header>
 
     <div id="main">
-         <h2>I'm interested in 
-         	<select>  
-         		<option value="value1">Value 1</option> 
-				<option value="value2" selected>Value 2</option>
-				<option value="value3">Value 3</option>
-			</select>
-			in 
-         	<select>  
-         		<option value="value1">Value 4</option> 
-				<option value="value2" selected>Value 5</option>
-				<option value="value3">Value 6</option>
+         <h2>I'm interested in
+            <select>
+                <% @sectors.each do |sector| %>
+                    <option value='<%= sector.id %>'><%= sector.name.titleize %></option>
+                <% end %>
+                <option value='all'>All</option>
+            </select>
+			in
+         	<select>
+                <% @regions.each do |region| %>
+                    <option value='<%= region.id %>'><%= region.name.titleize %></option>
+                <% end %>
+                <option value='all'>All</option>
 			</select>
          </h2>
     </div>
