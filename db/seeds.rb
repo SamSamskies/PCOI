@@ -10,3 +10,54 @@ sectors.each do |sector|
   Sector.create name: sector
 end
 
+require 'spreadsheet'
+
+Spreadsheet.client_encoding = 'UTF-8'
+
+file = File.join(Rails.root, 'db', 'jobs.xls')
+book = Spreadsheet.open file
+sheet1 = book.worksheet 0
+
+sheet1.each do |line|
+
+	next if line == []
+	next if line[0] == 'Pending' || line[0] == "0" || line[0] == "CURRENT REQ STATUS"
+	next if line[16].nil? || line[16] == 'SEE ABOVE'
+	next if line[4] == 'Married Couples Req'
+	description = line[16]
+	application_deadline = line[10]
+	departure_date = line[12]
+	notification_date = line[11]
+	year = line[1][2..-1]
+	quarter = line[2].split(' ')[-1].to_i
+	open_positions = line[7].to_i
+	sector_id = ""
+	if line[4] == 'Environment'
+		sector_id == 4
+	elsif line[4] == 'Agriculture'
+		sector_id == 6
+	elsif line[4] == 'Health'
+		sector_id == 2
+	elsif line[4] == 'Business'
+		sector_id == 3
+	elsif line[4] == 'Youth'
+		sector_id == 5
+	elsif line[4] == 'Education'
+		sector_id == 1
+	else
+		sector_id == 7
+	end
+
+	job = Job.create(
+		:application_deadline => application_deadline,
+		:departure_date => departure_date,
+		:description => description,
+		:notification_date => notification_date,
+		:open_positions => open_positions,
+		:physical_requirements => line[14],
+		:quarter => quarter,
+		:skills => line[15],
+		:year => year
+		)
+	job.sector_id = sector_id
+end
