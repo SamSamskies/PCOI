@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
 	GoogleMap.initMap();
-  Welcome.initListeners();
-
+    Welcome.initListeners();
 });
 
 var Welcome = {
@@ -14,9 +13,16 @@ var Welcome = {
                 sector_id: $( "#sectors option:selected" ).val(),
                 region_id: $( "#regions option:selected" ).val()
               }
-      })
+      });
       e.preventDefault()
-    })
+    });
+
+    console.log('here');
+    $("#search-results").on('click', '.actions', function() {
+    	console.log('enter');
+    	$('#modal').toggle();
+    });
+
   }
 }
 
