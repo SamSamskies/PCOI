@@ -3,42 +3,30 @@
     	<div id="brand"></div>
     </header>
     <div id="filterdiv">
-         <form id="interests" name="setInterests" class="inline" method="post">
+         <form id="interests" name="setInterests" class="inline" action='/jobs' method="get">
          	<p class="inline">I'm interested in</p>
-         	<div class="check-selections inline" id="sectors">
-         		<ul>
-		            <% @sectors.each do |sector| %>
-		            	<li><input type="checkbox" value='<%= sector.id %>'><label><%= sector.name.titleize %></label></li>
-		            <% end %>
-		            <li><input type="checkbox" value='Education'><label>Education</label></li>
-		            <li><input type="checkbox" value='Agriculture'><label>Agriculture</label></li>
-		            <li><input type="checkbox" value='Health'><label>Health</label></li>
-		            <li><input type="checkbox" value='Environment'><label>Environment</label></li>
-		            <li><input type="checkbox" value='Youth'><label>Youth</label></li>
-		            <span class="selectAll small">All</span>
-		        </ul>
-	        </div>
+           	<div class="check-selections inline" id="sectors-container">
+           		<select id="sectors">
+  		            <% @sectors.each do |sector| %>
+  		            	<option value='<%= sector.id %>'><%= sector.name.titleize %></label></option>
+  		            <% end %>
+  		        </select>
+  	        </div>
 
 
 			<p class="inline">in</p>
-			<div class="check-selections inline" id="regions">
-				<ul>
+			<div class="check-selections inline" id="regions-container">
+				<select id="regions">
 		            <% @regions.each do |region| %>
-		            	<li><input type="checkbox" value='<%= region.id %>'><label><%= region.name.titleize %></label></li>
-		            <% end %>
-		            <li><input type="checkbox" value='Central America'><label>Central America</label></li>
-		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
-		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
-		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
-		            <li><input type="checkbox" value='Asia'><label>Asia</label></li>
-		            <span class="selectAll small">All</span>
-		        </ul>
+		            	<option value='<%= region.id %>'><%= region.name.titleize %></option>
+                <% end %>
+		        </select>
 	        </div>
          	<input type="submit" class="submit" value="Go">
          </form>
     </div>
     <div id="map-canvas"></div>
-    <div id="SearchResults">
+    <div id="search-results">
 
 
     </div>

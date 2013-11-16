@@ -1,6 +1,5 @@
 $(document).ready(function() {
 
-	console.log('test');
 	//global variable _map stores map object
 	_map = initializeMap();
 	loadData();
@@ -11,6 +10,18 @@ $(document).ready(function() {
 	$('.selectNone').on('click', function() {
 		selectAll(this);
 	});
+
+  form = $('form#interests')
+  form.on('submit', function(e) {
+    $.ajax({
+      url: '/jobs',
+      data: {
+              sector_id: $( "#sectors option:selected" ).val(),
+              region_id: $( "#regions option:selected" ).val()
+            },
+    })
+    e.preventDefault()
+  })
 
 });
 

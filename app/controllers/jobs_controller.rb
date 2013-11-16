@@ -5,6 +5,3 @@ class JobsController < ApplicationController
     @jobs = sector_jobs - region_jobs
   end
 end
-
-# sector
-# region
