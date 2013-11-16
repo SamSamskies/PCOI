@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 20131116094222) do
   create_table "jobs", force: true do |t|
     t.string   "title"
     t.string   "description"
-    t.integer  "sector_id"
+    t.integer  "country_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -24,6 +24,8 @@ CSV.foreach("./db/countries.csv") do |row|
   end
 end
 
+country_ids = Country.pluck :id
+
 400.times do
-  Job.create title: Faker::Lorem.sentence, sector_id: sector_ids.sample
+  Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
 end
