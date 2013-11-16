@@ -8,6 +8,10 @@ PCOI::Application.routes.draw do
   resources :jobs, only: [:index]
   resources :sectors, only: [:show]
 
+  namespace :api do
+    resources :jobs, only: [:index]
+  end
+
   # Example resource route with options:
   #   resources :products do
   #     member do
