@@ -1,8 +1,68 @@
-<h1><%= @job.title %></h1>
-<h4>Sector</h4>
-<p><%= link_to @job.sector.name, sector_path(@job.sector) %></p>
-<h4>Description</h4>
-<p><%= @job.description %></p>
-<h4>Skills</h4>
-<p><%= @job.skills %></p>
-
+<div class='container job_show'>
+      <a name="top"></a> 
+      <div class='row job_description'>
+            <h2><%= @job.title %> in <%= @job.country.name %></h2>
+            <div class=' row need'><div class='col-md-6'><span class="glyphicon glyphicon-asterisk"></span>High Need</div></div>
+            <iframe width="100%" height="285" src="//www.youtube.com/embed/jM8y9jJXNJw" frameborder="0" allowfullscreen></iframe>
+            <a name="summary"></a> 
+      </div>
+      <div class='row navigation'>
+            <div class="btn-group">
+                    <a class='to_top' href='#quick_info'>Quick Info</a>
+                    <a class='to_top' href='#summary'>Summary</a>
+                    <a class='to_top' href='#skills'>Desired Skills</a>
+                    <a class='to_top' href='#physical_requirements'>Physical Requirements</a>
+            </div>
+      </div>
+      <div class='row job_quick_info'>
+            <a name="quick_info"></a> 
+            <h3>Quick Info</h3>
+            <div class='col-md-6'>
+                  <div class='row open_positions'>
+                        <div class='col-md-6'><span class='label'>Positions Open: </span></div>
+                        <div class = 'col-md-6'><%= @job.open_positions %></div>
+                  </div>
+                  <div class='row'>
+                        <div class='col-md-6'><span class='label'>Application Deadline: </span></div>
+                        <div class = 'col-md-6'>M, 10/24/13</div>
+                  </div>
+                  <div class='row'>
+                        <div class='col-md-6'><span class='label'>Notification Deadline: </span></div>
+                        <div class = 'col-md-6'>W, 1/13/14</div>
+                  </div>
+                  <div class='row'>
+                        <div class='col-md-6'><span class='label'>Departure Date: </span></div>
+                        <div class = 'col-md-6'>Th, 6/27/14</div>
+                  </div>
+                  <div class='row bookmark'>
+                        <div class='col-md-6'>
+                              <button type="button" class="btn btn-default btn-lg">
+                                    <span class="glyphicon glyphicon-bookmark"></span> Bookmark This Job
+                              </button>
+                              <p><a href='#top'>Back To Top</a></p>
+                        </div>
+                  </div>
+            </div>
+            <div class='col-md-6 job_profile_pic'>
+                  <%= image_tag('jobs_show_01.jpg') %>
+            </div>
+      </div>
+      <div class='row'>
+            <a name="summary"></a> 
+            <h3>Summary</h3>
+            <p><%= @job.description %></p>
+            <p><a href='#top'>Back To Top</a></p>
+      </div>
+      <div class='row desired skills'>
+            <a name="skills"></a> 
+            <h3>Desired Skills</h3>
+            <p><%= @job.skills %></p>
+            <p><a href='#top'>Back To Top</a></p>
+      </div>
+      <div class='row job_physical'>
+            <a name="physical_requirements"></a> 
+            <h3>Physical Requirements</h3>
+            <p><%= @job.physical_requirements %></p>
+            <p><a href='#top'>Back To Top</a></p>
+      </div>
+</div>
