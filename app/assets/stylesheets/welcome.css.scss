@@ -54,13 +54,32 @@ body {
     size:14px;
 }
 
-
-header {
-    background:#222;
-    color:#fff;
-    padding:10px;
-    position:relative;
+header	{
+	background:-webkit-linear-gradient(#222 0%, #444 100%);
+	color:#fff; 	
+	padding: 2px;
+	width: 100%;
 }
+header ul li				{padding: 0 3px 0 3px; font-size:.875em; margin-right:10px; text-align:center;}
+header ul li a:link,
+header ul li a:visited		{color:#ccc; text-transform:uppercase;}
+
+.topmenu {
+	display: none;
+}
+.topmenu li {
+	display: inline-block;
+}
+.email-login li {
+	padding: 3px;
+}
+.linkedin-login {
+	margin-left: 50px;
+}
+.linkedin-login button img {
+	width: 100px;
+}
+
 
 a {
     color:#1FA1FA;
@@ -152,9 +171,12 @@ button.submit {
 
 .small 										{font-size:.6em; font-weight:500; line-height:1; margin:0 0 .5em 0;}
 .med 										{font-size:1.2em; font-weight:300; line-height:1; margin:0 0 .5em 0;}
+.right 										{float: right;}
+.left 										{float: left;}
 
 /* filtered results table */
 .job_title									{font-weight: 500;}
+.departure_date								{min-width: 50px;}
 
 tr:nth-child(even) {background: #CCC}
 tr:nth-child(odd) {background: #FFF}
@@ -178,6 +200,13 @@ modal-footer {
 	height: 20px;
 }
 
+.sticky	{
+	position:fixed; 
+	top:0; 
+	width: 1000px;
+	z-index:100;
+}
+
 
 
 
@@ -196,6 +225,9 @@ option:checked:before { content: "☑ " }
 	#wrapper {
     	width:768px;
     }
+    .sticky {
+    	width: 768px;
+    }
 }
 @media screen and (max-width:760px) {
 	#map-canvas, #filterdiv, #modal {
@@ -203,5 +235,8 @@ option:checked:before { content: "☑ " }
 	}
 	#wrapper {
     	width:600px;
+    }
+    .sticky {
+    	width: 600px;
     }
 }

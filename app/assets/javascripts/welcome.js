@@ -1,8 +1,17 @@
 $(document).ready(function() {
 
 	GoogleMap.initMap();
-  Welcome.initListeners();
-  Welcome.fetchJobs();
+	Welcome.initListeners();
+	Welcome.fetchJobs();
+
+	// how far the navigation is from the top of the page
+	stickyNavTop = $("#nav").offset().top;
+	stickyNav();
+	
+	// and call it again when the user scrolls
+	$(window).scroll(function() {
+	    stickyNav();
+	});
 
 });
 
@@ -15,9 +24,12 @@ var Welcome = {
 
     
     $("#search-results").on('click', '.actions', function() {
-    	//document.location.href="/jobs/"+$(this).data('id');
     	Welcome.fetchJobPage($(this).data('id'));
+    });
 
+    $("header").on('click', '.showmenu', function() {
+    	$(".topmenu").addClass("inline");
+    	$('.topmenu').toggle();
     });
   },
 
@@ -40,11 +52,18 @@ var Welcome = {
 
   	})
   }
-
-    /*
-    $("#search-results").on('click', '.actions', function() {
-    	console.log('modal show');
-    	$('#modal').show().slideUp();
-    });
-	*/
 }
+
+var stickyNavTop = 0;
+// function to create a sticky navigation
+function stickyNav() {
+	// how much the user has scrolled
+	var scrollTop = $(window).scrollTop();		     
+
+	// compare the navigation distance vs scrolled distance; if scrolled distance is greater, make the nav "sticky"
+	if (scrollTop > stickyNavTop) { 
+	    $("#nav").addClass("sticky");
+	} else {
+	    $("#nav").removeClass("sticky"); 
+	}
+};
