@@ -5,11 +5,17 @@ gem 'rails', '4.0.0'
 group :development, :test do
   gem 'sqlite3'
   gem 'debugger'
+  gem 'rspec-rails', '~> 2.12'
+  gem 'capybara'
 end
 
 group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
+end
+
+group :test do
+  gem "shoulda-matchers"
 end
 
 gem 'sass-rails', '~> 4.0.0'
