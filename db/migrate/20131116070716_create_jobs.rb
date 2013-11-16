@@ -3,7 +3,7 @@ class CreateJobs < ActiveRecord::Migration
     create_table :jobs do |t|
       t.string :application_deadline
       t.string :departure_date
-      t.string :description
+      t.text :description
       t.string :notification_date
       t.integer :open_positions
       t.text :physical_requirements

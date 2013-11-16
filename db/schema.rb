@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20131116070739) do
   create_table "jobs", force: true do |t|
     t.string   "application_deadline"
     t.string   "departure_date"
-    t.string   "description"
+    t.text     "description"
     t.string   "notification_date"
     t.integer  "open_positions"
     t.text     "physical_requirements"
