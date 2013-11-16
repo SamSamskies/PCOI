@@ -74,9 +74,11 @@ label {
 /*------------------------------------- LAYOUT -------------------------------------------------*/
 #wrapper {
     width:900px;
-    margin:0 20px;
+    margin:0;
+    margin-left: 20px;
     background:#fff;
     overflow:auto;
+    float:left;
 }
 
 #filterdiv {
@@ -128,6 +130,26 @@ input.submit {
 
 .selectAll, .selectNone {
 	text-decoration: underline;
+}
+
+#rightColumn {
+	float:left;
+	padding: 0 10px;
+	min-width: 200px;
+	height: auto;	
+	background-color: #eee;
+	color: black;
+}
+
+.thumbnail {
+	background-color: #CBCBCB;
+	color: black;
+	text-align:center;
+	width: 180px;
+}
+
+#ll {
+	max-width: 50%;
 }
 
 .small 										{font-size:.6em; font-weight:500; line-height:1; margin:0 0 .5em 0;}
