@@ -8,8 +8,9 @@ var GoogleMap = {
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-  /*
-
+    
+  
+    /*
     var mapOptions = {
             center: new google.maps.LatLng(42.2353083, -71.0012016),
             zoom: 2,
@@ -20,7 +21,8 @@ var GoogleMap = {
 
       var map = new google.maps.Map(document.getElementById("map-canvas"),
           mapOptions);
-  */
+      */
+  
       return map;
   }
 }
