@@ -73,7 +73,7 @@ label {
 
 /*------------------------------------- LAYOUT -------------------------------------------------*/
 #wrapper {
-    width:900px;
+    width:1000px;
     margin:0 auto;
     background:#fff;
     overflow:auto;
@@ -107,14 +107,13 @@ label {
 	background-color: #B564D4;
 }
 
-input.submit {
+button.submit {
 	border-radius: 10px;
-	background-color: #74E868;
 	margin-top: 30px;
 }
 
 #map-canvas, #filterdiv, #modal {
-	width:900px;
+	width:1000px;
 	height:300px;
 }
 #modal {
@@ -175,6 +174,9 @@ td, th {
 modal-footer {
 	text-align: center;
 }
+.spacer {
+	height: 20px;
+}
 
 
 
@@ -185,3 +187,21 @@ option:checked:before { content: "☑ " }
 
 //#392E85
 //#A30008
+
+/* Responsive CSS Rules */
+@media screen and (min-width:768px) and (max-width:1024px) {
+	#map-canvas, #filterdiv, #modal {
+		width:768px;
+	}
+	#wrapper {
+    	width:768px;
+    }
+}
+@media screen and (max-width:760px) {
+	#map-canvas, #filterdiv, #modal {
+		width:600px;
+	}
+	#wrapper {
+    	width:600px;
+    }
+}

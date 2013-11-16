@@ -13,8 +13,10 @@ var Welcome = {
       e.preventDefault()
     });
 
+    
     $("#search-results").on('click', '.actions', function() {
-    	document.location.href="/jobs/"+$(this).data('id');
+    	//document.location.href="/jobs/"+$(this).data('id');
+    	Welcome.fetchJobPage($(this).data('id'));
 
     });
   },
@@ -27,6 +29,16 @@ var Welcome = {
               region_id: $( "#regions option:selected" ).val()
             }
     });
+  },
+
+  fetchJobPage: function(id) {
+  	$.ajax({
+  		url: '/jobs/' + id
+  	}).done(function(response) {
+  		console.log($(response))
+  		$('.modal-body').html(response);
+
+  	})
   }
 
     /*
