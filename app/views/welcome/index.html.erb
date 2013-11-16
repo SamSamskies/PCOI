@@ -5,8 +5,9 @@
     <div id="filterdiv">
          <form id="interests" name="setInterests" class="inline" action='/jobs' method="get">
          	<p class="inline">I'm interested in</p>
-           	<div class="check-selections inline" id="sectors-container">
+           	<div class="check-selections inline small" id="sectors-container">
            		<select id="sectors">
+           			<option value='0'></option>
   		            <% @sectors.each do |sector| %>
   		            	<option value='<%= sector.id %>'><%= sector.name.titleize %></label></option>
   		            <% end %>
@@ -15,20 +16,23 @@
 
 
 			<p class="inline">in</p>
-			<div class="check-selections inline" id="regions-container">
+			<div class="check-selections inline small" id="regions-container">
 				<select id="regions">
+					<option value='0'></option>
 		            <% @regions.each do |region| %>
 		            	<option value='<%= region.id %>'><%= region.name.titleize %></option>
                 <% end %>
 		        </select>
 	        </div>
-         	<input type="submit" class="submit" value="Go">
+         	<input type="submit" class="submit" value="Find Opportunities">
          </form>
     </div>
     <div id="map-canvas"></div>
-    <div id="search-results">
+    <div>
+    	<table id="search-results" class="med">
+    	
+		</table>
+	</div>
 
-
-    </div>
 </div>
 
