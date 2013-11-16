@@ -3,16 +3,13 @@ class Job < ActiveRecord::Base
   belongs_to :sector
 
   def self.filter(sector, region)
-    if sector && region.nil?
-      return sector.jobs
+    return all unless sector && region
 
-    elsif region && sector.nil?
-      return region.jobs
+    sector_jobs = sector.jobs
+    return sector_jobs if sector && region.nil?
 
-    elsif sector.nil? && region.nil?
-      return all
-
-    end
+    region_jobs = region.jobs
+    return region.jobs if region && sector.nil?
 
     sector_jobs - region_jobs
   end
