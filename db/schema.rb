@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20131116070739) do
     t.text     "skills"
     t.text     "title"
     t.string   "year"
+    t.integer  "need"
     t.integer  "country_id"
     t.integer  "sector_id"
     t.datetime "created_at"

@@ -13,4 +13,5 @@ class Job < ActiveRecord::Base
 
     sector_jobs - region_jobs
   end
+
 end

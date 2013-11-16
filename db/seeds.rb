@@ -81,7 +81,9 @@ sheet1.each_with_index do |line, i|
 		:skills => line[15],
 		:year => year,
 		:country_id => country_id,
-		:title => title
-		)
+		:title => title,
+		:need => (1..20).to_a.sample
+	)
+
 	job.update sector: Sector.find(sector_id)
 end
