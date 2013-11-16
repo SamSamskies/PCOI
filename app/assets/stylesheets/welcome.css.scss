@@ -83,11 +83,11 @@ label {
 	//background-color: #392E85;
 	background-color: transparent;
 	padding:20px;
-	top: 20px; 
-	z-index: 99;
 	text-align: center;
 	padding-top: 100px;
+	z-index: 90;
 	position: absolute;
+	top: 20px; 
 }
 #interests {
 	opacity: 1;
@@ -113,9 +113,17 @@ input.submit {
 	margin-top: 30px;
 }
 
-#map-canvas, #filterdiv {
+#map-canvas, #filterdiv, #modal {
 	width:900px;
 	height:300px;
+}
+#modal {
+	background-color: #eee;
+	opacity: .7;
+	z-index: 99;
+	position: absolute;
+	top: 20px; 
+	display: none;
 }
 
 #map-canvas {
@@ -162,10 +170,12 @@ tr.head {
 td, th {
 	padding: 10px;
 }
-.modal {
-	float: left;
-	background-color: #404;
+
+/* Modal */
+modal-footer {
+	text-align: center;
 }
+
 
 
 

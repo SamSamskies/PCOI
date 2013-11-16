@@ -18,10 +18,17 @@ var Welcome = {
     });
 
     $("#search-results").on('click', '.actions', function() {
-    	console.log('enter');
-    	$('#modal').toggle();
+    	document.location.href="/jobs/"+$(this).data('id');
+    	
     });
 
+    /*
+    $("#search-results").on('click', '.actions', function() {
+    	console.log('modal show');
+    	$('#modal').show().slideUp();
+    });
+	*/
+	
   }
 }
 
