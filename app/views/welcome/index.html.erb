@@ -7,7 +7,7 @@
          	<p class="inline">I'm interested in</p>
            	<div class="check-selections inline" id="sectors-container">
            		<select id="sectors" class="form-control">
-           			<option value='0'></option>
+           			<option value='0'>All Sectors</option>
   		            <% @sectors.each do |sector| %>
   		            	<option value='<%= sector.id %>'><%= sector.name.titleize %></label></option>
   		            <% end %>
@@ -18,13 +18,15 @@
 			<p class="inline">in</p>
 			<div class="check-selections inline small" id="regions-container">
 				<select id="regions" class="form-control">
-					<option value='0'></option>
+					<option value='0'>All Regions</option>
 		            <% @regions.each do |region| %>
 		            	<option value='<%= region.id %>'><%= region.name.titleize %></option>
                 <% end %>
 		        </select>
 	        </div>
-         	<button type="submit" class="submit btn btn-success btn-lg" value="Find Opportunities">Find Opportunities</button>
+	        <div class="form-horizontal">
+         		<button type="submit" class="submit btn btn-success btn-lg" value="Find Opportunities">Find Opportunities</button>
+         	</div>
          </form>
     </div>
     <div id="map-canvas"></div>
@@ -33,7 +35,39 @@
     	
 		</table>
 	</div>
-	<div id="modal">#TEST#</div>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	      	<div class="spacer">
+	        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        </div>
+	        <!--<h4 class="modal-title" id="myModalLabel"></h4>-->
+	      </div>
+	      <div class="modal-body">
+	      </div>
+
+	      <div class="modal-footer">
+			<!-- AddThis Button BEGIN -->
+			<div class="addthis_toolbox addthis_default_style addthis_32x32_style col-md-10 col-md-offset-2">
+			  <a class="addthis_button_preferred_1"></a>
+			  <a class="addthis_button_preferred_2"></a>
+			  <a class="addthis_button_preferred_3"></a>
+			  <a class="addthis_button_preferred_4"></a>
+			  <a class="addthis_button_compact"></a>
+			  <a class="addthis_counter addthis_bubble_style"></a>
+			</div>
+			<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+			<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51febb8b0c7aa2c1"></script>
+			<!-- AddThis Button END -->
+
+			<button type="button" class="btn btn-primary">Apply Now!</button>
+
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 </div>
 <!--
 <div id="rightColumn">

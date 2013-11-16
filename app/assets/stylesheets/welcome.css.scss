@@ -73,7 +73,7 @@ label {
 
 /*------------------------------------- LAYOUT -------------------------------------------------*/
 #wrapper {
-    width:900px;
+    width:1000px;
     margin:0 auto;
     background:#fff;
     overflow:auto;
@@ -83,11 +83,11 @@ label {
 	//background-color: #392E85;
 	background-color: transparent;
 	padding:20px;
-	top: 20px; 
-	z-index: 99;
 	text-align: center;
 	padding-top: 100px;
+	z-index: 90;
 	position: absolute;
+	top: 20px; 
 }
 #interests {
 	opacity: 1;
@@ -107,15 +107,22 @@ label {
 	background-color: #B564D4;
 }
 
-input.submit {
+button.submit {
 	border-radius: 10px;
-	background-color: #74E868;
 	margin-top: 30px;
 }
 
-#map-canvas, #filterdiv {
-	width:900px;
+#map-canvas, #filterdiv, #modal {
+	width:1000px;
 	height:300px;
+}
+#modal {
+	background-color: #eee;
+	opacity: .7;
+	z-index: 99;
+	position: absolute;
+	top: 20px; 
+	display: none;
 }
 
 #map-canvas {
@@ -162,10 +169,15 @@ tr.head {
 td, th {
 	padding: 10px;
 }
-.modal {
-	float: left;
-	background-color: #404;
+
+/* Modal */
+modal-footer {
+	text-align: center;
 }
+.spacer {
+	height: 20px;
+}
+
 
 
 
@@ -175,3 +187,21 @@ option:checked:before { content: "☑ " }
 
 //#392E85
 //#A30008
+
+/* Responsive CSS Rules */
+@media screen and (min-width:768px) and (max-width:1024px) {
+	#map-canvas, #filterdiv, #modal {
+		width:768px;
+	}
+	#wrapper {
+    	width:768px;
+    }
+}
+@media screen and (max-width:760px) {
+	#map-canvas, #filterdiv, #modal {
+		width:600px;
+	}
+	#wrapper {
+    	width:600px;
+    }
+}

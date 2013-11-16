@@ -1,0 +1,8 @@
+<h1><%= @job.title %></h1>
+<h4>Sector</h4>
+<p><%= link_to @job.sector.name, sector_path(@job.sector) %></p>
+<h4>Description</h4>
+<p><%= @job.description %></p>
+<h4>Skills</h4>
+<p><%= @job.skills %></p>
+

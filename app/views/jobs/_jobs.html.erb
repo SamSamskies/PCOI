@@ -11,7 +11,8 @@
     <td class="job_title"><%= "#{job.title}" %></td>
     <td><%= "#{job.country.try(:name)}" %></td>
     <td><%= "#{prettify_date(job.departure_date)}" %></td>
-    <td><button class="actions btn btn-primary">View Details and Apply</button></td>
+    <td><button class="actions btn btn-primary" data-toggle="modal" data-target="#myModal" data-id="<%= job.id %>">View Details and Apply</button></td>
+    <!--<td><button class="actions btn btn-primary" data-id="<%= job.id %>">View Details and Apply</button></td>-->
   </tr>
 <% end %>
 
