@@ -1,4 +1,4 @@
 class Country < ActiveRecord::Base
   belongs_to :region
-  has_many :sectors
+  has_and_belongs_to_many :sectors
 end

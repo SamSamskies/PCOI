@@ -10,17 +10,19 @@ end
 
 region_ids = Region.pluck :id
 
-CSV.foreach("./db/countries.csv") do |row|
-  Country.create name: row.first.strip, region_id: region_ids.sample
-end
-
-country_ids = Country.pluck :id
-
 sectors.each do |sector|
-  Sector.create name: sector, country_id: country_ids.sample
+  sector = Sector.create name: sector
 end
 
 sector_ids = Sector.pluck :id
+
+CSV.foreach("./db/countries.csv") do |row|
+  country = Country.create name: row.first.strip, region_id: region_ids.sample
+
+  4.times do
+    country.sectors << Sector.find(sector_ids.sample)
+  end
+end
 
 400.times do
   Job.create title: Faker::Lorem.sentence, sector_id: sector_ids.sample
