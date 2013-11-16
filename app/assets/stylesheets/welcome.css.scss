@@ -74,24 +74,20 @@ label {
 /*------------------------------------- LAYOUT -------------------------------------------------*/
 #wrapper {
     width:900px;
-    margin:0;
-    margin-left: 20px;
+    margin:0 auto;
     background:#fff;
     overflow:auto;
-    float:left;
 }
 
 #filterdiv {
 	//background-color: #392E85;
 	background-color: transparent;
 	padding:20px;
-	float: left;
-	position: absolute;
 	top: 20px; 
-	left: 20px; 
 	z-index: 99;
 	text-align: center;
 	padding-top: 100px;
+	position: absolute;
 }
 #interests {
 	opacity: 1;
@@ -102,9 +98,7 @@ label {
 }
 
 .check-selections {
-	max-width: 400px;
-	padding: 5px;
-	border-radius: 10px;
+	color: black;
 }
 #sectors {
 	background-color: #6C8CD5;
@@ -139,6 +133,7 @@ input.submit {
 	height: auto;	
 	background-color: #eee;
 	color: black;
+	display: none;
 }
 
 .thumbnail {
@@ -166,10 +161,6 @@ tr.head {
 
 td, th {
 	padding: 10px;
-}
-.actions {
-	text-decoration: underline;
-	color: blue;
 }
 .modal {
 	float: left;

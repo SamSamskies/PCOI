@@ -17,7 +17,6 @@ var Welcome = {
       e.preventDefault()
     });
 
-    console.log('here');
     $("#search-results").on('click', '.actions', function() {
     	console.log('enter');
     	$('#modal').toggle();
