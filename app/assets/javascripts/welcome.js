@@ -5,14 +5,21 @@ $(document).ready(function() {
 	_map = initializeMap();
 	loadData();
 
+	$('.selectAll').on('click', function() {
+		selectAll(this);
+	});
+	$('.selectNone').on('click', function() {
+		selectAll(this);
+	});
+
 });
 
 function initializeMap() {
 	//return map object
 
   var mapOptions = {
-    zoom: 8,
-    center: new google.maps.LatLng(-34.397, 150.644),
+    zoom: 2,
+    center: new google.maps.LatLng(0,0),
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
   var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
@@ -34,5 +41,20 @@ function initializeMap() {
 
 function loadData() {
 	console.log('loadData');
+}
+
+function selectAll(e) {
+	$(e).siblings()
+		.find('input')
+		.each(function(k, v) {
+			v.checked = true;
+		});
+}
+function selectNone(e) {
+	$(e).siblings()
+		.find('input')
+		.each(function(k, v) {
+			v.checked = false;
+		});
 }
 
