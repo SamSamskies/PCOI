@@ -1,3 +1,21 @@
-<div class="container">
-  <h1><%= @sector.name.titleize %></h1>
+<div class='row'>
+	<%= render 'sector_carousel', :sector => @sector%>
 </div>
+<div class="container sector_show">
+	<div class='row sector_description'>
+		<h1><%= @sector.name.titleize %></h1>
+		<div class='col-md-8'>
+			<p class='lead'>This is the largest area of need for Peace Corps countries. Education Volunteers team-teach or directly teach English, health, literacy, math, and science. Education Volunteers strengthen local capacity by training and mentoring teachers in primary and secondary schools, teacher training colleges, and universities. Volunteers work with teachers to improve participatory teaching methodologies, inclusion practices, classroom management, authentic assessments, parental involvement, and gender equality in the classroom. They also create after-school programs, clubs, and camps for boys and girls to promote HIV/AIDS prevention and life skills.</p>
+		</div>
+		<div class='col-md-4'>
+			<iframe width="100%" height="285" src="//www.youtube.com/embed/8uRbeW-Vro8" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
+	<div class='row own_words'>
+		<%= render 'own_words' %>
+	</div>
+	<div class='row'>
+		<%= link_to "All #{@sector.name.titleize} Opportunities >>", '#', class: 'pull-right btn' %>
+	</div>
+</div
+
