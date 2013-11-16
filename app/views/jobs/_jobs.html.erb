@@ -1,10 +1,17 @@
+<tr class="head">
+	<th>Need</th>
+	<th>Job Title</th>
+	<th>Country</th>
+	<th>Departure Date</th>
+	<th></th>
+</tr>
 <% filtered_jobs.each do |job| %>
   <tr>
-    <td><%= "#{job.title}" %></td>
-    <td><%= "#{job.sector.name}" %></td>
+    <td>1</td>
+    <td class="job_title"><%= "#{job.title}" %></td>
+    <td><%= "#{job.country.try(:name)}" %></td>
     <td><%= "#{prettify_date(job.departure_date)}" %></td>
-    <td><%= "#{job.skills}" %></td>
-    <td><%= "#{job.country_id}" %></td>
+    <td><span class="actions">View Details and Apply</span></td>
   </tr>
 <% end %>
 

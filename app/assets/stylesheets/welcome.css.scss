@@ -148,12 +148,35 @@ input.submit {
 	width: 180px;
 }
 
-#ll {
-	max-width: 50%;
+.small 										{font-size:.6em; font-weight:500; line-height:1; margin:0 0 .5em 0;}
+.med 										{font-size:1.2em; font-weight:300; line-height:1; margin:0 0 .5em 0;}
+
+/* filtered results table */
+.job_title									{font-weight: 500;}
+
+tr:nth-child(even) {background: #CCC}
+tr:nth-child(odd) {background: #FFF}
+
+tr.head {
+	font-weight: 400;
+	background-color: #222;
+	color: #eee;
+	border-radius: 4px;
 }
 
-.small 										{font-size:.6em; font-weight:500; line-height:1; margin:0 0 .5em 0;}
-.med 										{font-size:.8em; font-weight:300; line-height:1; margin:0 0 .5em 0;}
+td, th {
+	padding: 10px;
+}
+.actions {
+	text-decoration: underline;
+	color: blue;
+}
+.modal {
+	float: left;
+	background-color: #404;
+}
+
+
 
 /* option:checked:before { content: "✓" } */
 option:before { content: "☐ " }
