@@ -11,7 +11,8 @@ class Job < ActiveRecord::Base
     region_jobs = region.jobs if region
     return region.jobs.sort { |job1, job2| job1.need <=> job2.need } if region && sector.nil?
 
-    (sector_jobs - region_jobs).sort { |job1, job2| job1.need <=> job2.need }
+    sector_and_region_jobs = (sector_jobs + region_jobs)
+    sector_and_region_jobs.select{ |job| sector_and_region_jobs.count(job) > 1 }.sort { |job1, job2| job1.need <=> job2.need }
   end
 
 end
