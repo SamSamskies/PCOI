@@ -1,26 +1,33 @@
 $(document).ready(function() {
 
 	GoogleMap.initMap();
-    Welcome.initListeners();
+  Welcome.initListeners();
+  Welcome.fetchJobs();
+
 });
 
 var Welcome = {
   initListeners: function() {
     $('form#interests').on('submit', function(e) {
-      $.ajax({
-        url: '/jobs',
-        data: {
-                sector_id: $( "#sectors option:selected" ).val(),
-                region_id: $( "#regions option:selected" ).val()
-              }
-      });
+      Welcome.fetchJobs();
       e.preventDefault()
     });
 
     $("#search-results").on('click', '.actions', function() {
     	document.location.href="/jobs/"+$(this).data('id');
-    	
+
     });
+  },
+
+  fetchJobs: function() {
+    $.ajax({
+      url: '/jobs',
+      data: {
+              sector_id: $( "#sectors option:selected" ).val(),
+              region_id: $( "#regions option:selected" ).val()
+            }
+    });
+  }
 
     /*
     $("#search-results").on('click', '.actions', function() {
@@ -28,7 +35,5 @@ var Welcome = {
     	$('#modal').show().slideUp();
     });
 	*/
-	
-  }
 }
 
