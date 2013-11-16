@@ -7,6 +7,7 @@ group :development, :test do
   gem 'debugger'
   gem 'rspec-rails', '~> 2.12'
   gem 'capybara'
+  gem 'faker'
 end
 
 group :development do
