@@ -24,10 +24,6 @@ sector_ids = Sector.pluck :id
 print "Creating Countries"
 CSV.foreach("./db/countries.csv") do |row|
   country = Country.create name: row.first.strip, region_id: region_ids.sample
-
-  4.times do
-    country.sectors << Sector.find(sector_ids.sample)
-  end
 end
 
 
@@ -37,13 +33,15 @@ Spreadsheet.client_encoding = 'UTF-8'
 file = File.join(Rails.root, 'db', 'jobs.xls')
 book = Spreadsheet.open file
 sheet1 = book.worksheet 0
-i = 0
-sheet1.each do |line|
+
+sheet1.each_with_index do |line, i|
+	print i += 1
+	sector = line[4]
 
 	next if line == []
 	next if line[0] == 'Pending' || line[0] == "0" || line[0] == "CURRENT REQ STATUS"
 	next if line[16].nil? || line[16] == 'SEE ABOVE'
-	next if line[4] == 'Married Couples Req'
+	next if sector == 'Married Couples Req'
 	description = line[16]
 	application_deadline = line[10]
 	departure_date = line[12]
@@ -55,17 +53,17 @@ sheet1.each do |line|
 	sector_id = ""
 	country_id = Country.find_by_name(line[5]).id unless Country.find_by_name(line[5]).nil?
 
-	if line[4] == 'Environment'
+	if sector == 'Environment'
 		sector_id = 4
-	elsif line[4] = 'Agriculture'
+	elsif sector == 'Agriculture'
 		sector_id = 6
-	elsif line[4] = 'Health'
+	elsif sector == 'Health'
 		sector_id = 2
-	elsif line[4] = 'Business'
+	elsif sector == 'Business'
 		sector_id = 3
-	elsif line[4] = 'Youth'
+	elsif sector == 'Youth'
 		sector_id = 5
-	elsif line[4] = 'Education'
+	elsif sector == 'Education'
 		sector_id = 1
 	else
 		sector_id = 7
@@ -84,10 +82,5 @@ sheet1.each do |line|
 		:country_id => country_id,
 		:title => title
 		)
-	job.sector_id = sector_id
-	print i += 1
+	job.update sector: Sector.find(sector_id)
 end
-
-# 400.times do
-#   Job.create title: Faker::Lorem.sentence, country_id: country_ids.sample
-# end
