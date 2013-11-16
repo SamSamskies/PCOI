@@ -11,9 +11,15 @@ class CreateJobs < ActiveRecord::Migration
       t.text :skills
       t.text :title
       t.string :year
+<<<<<<< HEAD
 
       t.belongs_to :country
       t.belongs_to :sector
+=======
+      t.integer :country_id
+      t.integer :sector_id
+
+>>>>>>> 9e0569bee37fb243a4ff57ff6e2715eabdd3f78a
       t.timestamps
     end
   end

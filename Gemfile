@@ -4,9 +4,9 @@ gem 'rails', '4.0.0'
 
 group :development, :test do
   gem 'sqlite3'
-  gem 'debugger'
+  # gem 'debugger'
   gem 'rspec-rails', '~> 2.12'
-  gem 'capybara'
+  # gem 'capybara'
   gem 'faker'
 end
 
@@ -20,8 +20,8 @@ group :test do
   gem "shoulda-matchers"
 end
 
-gem 'execjs'
-gem 'therubyracer'
+# gem 'execjs'
+# gem 'therubyracer'
 
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
@@ -37,6 +37,6 @@ end
 gem 'spreadsheet'
 
 group :production do
-  gem 'pg'
+  # gem 'pg'
   gem 'rails_12factor'
 end
