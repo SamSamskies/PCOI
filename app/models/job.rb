@@ -12,6 +12,8 @@ class Job < ActiveRecord::Base
     elsif sector.nil? && region.nil?
       return all
 
+    end
+
     sector_jobs - region_jobs
   end
 end
