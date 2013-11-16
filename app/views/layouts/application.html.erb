@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8" />
   <title>PCOI - Find Your Corps</title>
+  <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>-->
+  <%= javascript_include_tag 'http://maps.google.com/maps/api/js?v=3&sensor=false' %>
+
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
+  
 </head>
 <body>
 
