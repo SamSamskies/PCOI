@@ -1,6 +1,6 @@
 <div id="wrapper">
     <header id="nav">
-	    <button type="button" class="btn btn-default btn inline showmenu">
+	    <button type="button" id="show-menu" class="btn btn-default btn inline">
 	  		<span class="glyphicon glyphicon-align-justify left"></span>
 		</button>
 		<ul class="topmenu">
@@ -8,7 +8,6 @@
   		        <li><%= link_to sector.name.titleize.split.first, sector_path(sector) %> </li>
             <% end %>
 		</ul>
-		<button class="btn-default btn-sm right inline login" data-toggle="modal" data-target="#loginModal">Login</button>
     </header>
     <div id="filterdiv">
          <form id="interests" name="setInterests" class="inline" action='/jobs' method="get">
@@ -44,7 +43,7 @@
     <div id="map-canvas"></div>
     <div>
     	<table id="search-results" class="med">
-    	
+
 		</table>
 	</div>
 	<!-- Job Modal -->
@@ -80,71 +79,3 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-
-	<!-- Login Modal -->
-	<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	  <div class="modal-dialog">
-	    <div class="modal-content">
-	      <div class="modal-header">
-	      	<h2>Login</h2>
-	      	<div class="spacer">
-	        	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-	        </div>
-	        <!--<h4 class="modal-title" id="myModalLabel"></h4>-->
-	      </div>
-	      <div class="modal-body">
-	      	<ul class='email-login inline'>
-	      		<li><input type="email" placeholder="you@example.com" /></li>
-	      		<li><input type="password" placeholder="password"/></li>
-	      		<li><button type="button" class="btn btn-default">Login with Email</button></li>
-	      	</ul>
-	      	<h2 class="inline">or</h2>
-	      	<div class='linkedin-login inline'>
-	      		<button type="button" class="btn btn-default">Login with <%= image_tag('linkedin_logo.jpg') %></button>
-	      	</div>
-	      </div>
-
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-</div>
-<!--
-<div id="rightColumn">
-	<span>Match Your Experience</span>
-	<div class="thumbnail">
-			<%= image_tag('linkedin_logo.jpg') %>
-	</div>
-	<hr>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('education.png') %>
-		</div>
-	</a>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('ag.png') %>
-		</div>
-	</a>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('enviro.png') %>
-		</div>
-	</a>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('health.png') %>
-		</div>
-	</a>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('business.png') %>
-		</div>
-	</a>
-	<a href="/education.html">
-		<div class="thumbnail">
-			<%= image_tag('youth.png') %>
-		</div>
-	</a>
-</div>
--->

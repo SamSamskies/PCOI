@@ -7,7 +7,7 @@ $(document).ready(function() {
 	// how far the navigation is from the top of the page
 	stickyNavTop = $("#nav").offset().top;
 	stickyNav();
-	
+
 	// and call it again when the user scrolls
 	$(window).scroll(function() {
 	    stickyNav();
@@ -22,13 +22,12 @@ var Welcome = {
       e.preventDefault()
     });
 
-    
+
     $("#search-results").on('click', '.actions', function() {
     	Welcome.fetchJobPage($(this).data('id'));
     });
 
-    $("header").on('click', '.showmenu', function() {
-    	$(".topmenu").addClass("inline");
+    $("#show-menu").on('click', function() {
     	$('.topmenu').toggle();
     });
   },
@@ -58,12 +57,12 @@ var stickyNavTop = 0;
 // function to create a sticky navigation
 function stickyNav() {
 	// how much the user has scrolled
-	var scrollTop = $(window).scrollTop();		     
+	var scrollTop = $(window).scrollTop();
 
 	// compare the navigation distance vs scrolled distance; if scrolled distance is greater, make the nav "sticky"
-	if (scrollTop > stickyNavTop) { 
+	if (scrollTop > stickyNavTop) {
 	    $("#nav").addClass("sticky");
 	} else {
-	    $("#nav").removeClass("sticky"); 
+	    $("#nav").removeClass("sticky");
 	}
 };

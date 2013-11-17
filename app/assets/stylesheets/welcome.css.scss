@@ -56,7 +56,7 @@ body {
 
 header	{
 	background:-webkit-linear-gradient(#222 0%, #444 100%);
-	color:#fff; 	
+	color:#fff;
 	padding: 2px;
 	width: 100%;
 }
@@ -64,8 +64,18 @@ header ul li				{padding: 0 3px 0 3px; font-size:.875em; margin-right:10px; text
 header ul li a:link,
 header ul li a:visited		{color:#ccc; text-transform:uppercase;}
 
+#nav {
+  height: 32px;
+}
+#show-menu {
+  float: left;
+  margin-right: 20px;
+}
+
 .topmenu {
 	display: none;
+  float: left;
+  margin: 0;
 }
 .topmenu li {
 	display: inline-block;
@@ -98,6 +108,10 @@ label {
     overflow:auto;
 }
 
+#search-results {
+  width: 100%;
+}
+
 #filterdiv {
 	//background-color: #392E85;
 	background-color: transparent;
@@ -106,7 +120,7 @@ label {
 	padding-top: 100px;
 	z-index: 90;
 	position: absolute;
-	top: 20px; 
+	top: 20px;
 }
 #interests {
 	opacity: 1;
@@ -140,7 +154,7 @@ button.submit {
 	opacity: .7;
 	z-index: 99;
 	position: absolute;
-	top: 20px; 
+	top: 20px;
 	display: none;
 }
 
@@ -156,7 +170,7 @@ button.submit {
 	float:left;
 	padding: 0 10px;
 	min-width: 200px;
-	height: auto;	
+	height: auto;
 	background-color: #eee;
 	color: black;
 	display: none;
@@ -201,8 +215,8 @@ modal-footer {
 }
 
 .sticky	{
-	position:fixed; 
-	top:0; 
+	position:fixed;
+	top:0;
 	width: 1000px;
 	z-index:100;
 }

@@ -5,11 +5,13 @@ var GoogleMap = {
     var mapOptions = {
       zoom: 2,
       center: new google.maps.LatLng(0,0),
+      scrollwheel: false,
+      disableDefaultUI: true,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
-    
-  
+
+
     /*
     var mapOptions = {
             center: new google.maps.LatLng(42.2353083, -71.0012016),
@@ -22,7 +24,7 @@ var GoogleMap = {
       var map = new google.maps.Map(document.getElementById("map-canvas"),
           mapOptions);
       */
-  
+
       return map;
   }
 }
