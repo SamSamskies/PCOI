@@ -72,12 +72,13 @@ header ul li a:visited		{color:#ccc; text-transform:uppercase;}
   margin-right: 20px;
 }
 
-.topmenu {
+#top-menu {
 	display: none;
   float: left;
   margin: 0;
 }
-.topmenu li {
+
+#top-menu li {
 	display: inline-block;
 }
 .email-login li {

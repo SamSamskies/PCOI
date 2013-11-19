@@ -3,7 +3,7 @@
 	    <button type="button" id="show-menu" class="btn btn-default btn inline">
 	  		<span class="glyphicon glyphicon-align-justify left"></span>
 		</button>
-		<ul class="topmenu">
+		<ul id="top-menu">
 			<% @sectors.each do |sector| %>
   		        <li><%= link_to sector.name.titleize.split.first, sector_path(sector) %> </li>
             <% end %>

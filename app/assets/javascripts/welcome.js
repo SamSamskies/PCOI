@@ -28,7 +28,7 @@ var Welcome = {
     });
 
     $("#show-menu").on('click', function() {
-    	$('.topmenu').toggle();
+    	$('#top-menu').toggle();
     });
   },
 
@@ -46,7 +46,6 @@ var Welcome = {
   	$.ajax({
   		url: '/jobs/' + id
   	}).done(function(response) {
-  		console.log($(response))
   		$('.modal-body').html(response);
 
   	})

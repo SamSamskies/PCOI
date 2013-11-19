@@ -5,5 +5,6 @@ class JobsController < ApplicationController
 
   def show
     @job = Job.find(params[:id])
+    render :layout => false
   end
 end
